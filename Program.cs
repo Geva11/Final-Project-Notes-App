@@ -6,17 +6,19 @@ namespace Final_Project_Notes_App
     internal class Program
     {
         static List<User> users = new List<User>();
+        static List<Note> notes;
 
         public static void Main(string[] args)
         {
             while (true)
             {
                 Console.WriteLine("Welcome to Notes & TodoLists App!");
-                Console.WriteLine("---------------------------------");
+                Console.WriteLine("---------------------------------------------");
                 Console.WriteLine("1. Register");
                 Console.WriteLine("2. Login");
                 Console.WriteLine("3. Exit");
-                Console.WriteLine("---------------------------------");
+                Console.WriteLine("4. View All Registered User(s)'s Notes");
+                Console.WriteLine("---------------------------------------------");
                 Console.Write("Choose in the options: ");
 
                 int choice = int.Parse(Console.ReadLine());
@@ -45,13 +47,6 @@ namespace Final_Project_Notes_App
                                 Console.Write("What would you like to do?: ");
 
                                 int input = int.Parse(Console.ReadLine());
-
-                                if (!isLoggedIn) // Check for immediate logout before processing the choice
-                                {
-                                    Console.Clear();
-                                    Console.WriteLine("\nLogging out... Goodbye!");
-                                    break; // Exit the loop immediately after logging out
-                                }
 
                                 switch (input)
                                 {
@@ -93,6 +88,10 @@ namespace Final_Project_Notes_App
                         Console.Clear();
                         Console.WriteLine("Thank you for using Notes & TodoLists App!\n");
                         Environment.Exit(0);
+                        break;
+                    case 4:
+                        Console.Clear();
+                        ViewAllNotes.UsersAllNotes(users);
                         break;
                     default:
                         Console.WriteLine("\nInvalid choice. Please try again.");
