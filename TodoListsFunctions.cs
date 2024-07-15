@@ -37,7 +37,7 @@ namespace Final_Project_Notes_App
 
             Console.WriteLine("Task(s) added successfully!");
             Console.Clear();
-            TodoListsFunctions.DisplayTasks(todoList);
+            DisplayTasks(todoList);
 
             // Loop for asking further actions
             while (true)

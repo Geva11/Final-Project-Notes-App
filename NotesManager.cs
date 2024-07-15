@@ -36,7 +36,7 @@ namespace Final_Project_Notes_App
             Console.WriteLine("List of Notes:");
             for (int i = 0; i < user.Notes.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. {user.Notes[i].Title}\n");
+                Console.WriteLine($"{i + 1}. {user.Notes[i].Title}");
             }
 
             Console.Write("Enter the number of the note you want to view: ");
@@ -48,23 +48,12 @@ namespace Final_Project_Notes_App
                 Console.WriteLine($"\n** {selectedNote.Title} **");
                 Console.WriteLine(selectedNote.Content);
 
-                DisplayNotes(user);
-
                 Shortcut(selectedNote, user);
             }
             else
             {
                 Console.WriteLine("\nInvalid note number.");
                 Console.Clear();
-            }
-        }
-
-        public static void DisplayNotes(User user)
-        {
-            Console.WriteLine("\nList of Notes:");
-            for (int i = 0; i < user.Notes.Count; i++)
-            {
-                Console.WriteLine($"{i + 1}. {user.Notes[i].Title}");
             }
         }
 

@@ -27,36 +27,7 @@ namespace Final_Project_Notes_App
         {
             if (user.Notes.Count > 0)
             {
-                NotesManager.DisplayNotes(user);
-                Console.WriteLine("----------------------");
-                Console.WriteLine("1. Edit Note");
-                Console.WriteLine("2. Go back");
-                Console.WriteLine("----------------------");
-                Console.WriteLine("Do you want to:");
-                int choice = int.Parse(Console.ReadLine());
-
-                switch (choice)
-                {
-                    case 1:
-                        Console.Write("Enter the number of the note you want to edit: ");
-                        int noteNumber = int.Parse(Console.ReadLine());
-                        if (noteNumber > 0 && noteNumber <= user.Notes.Count)
-                        {
-                            Note noteToEdit = user.Notes[noteNumber - 1];
-                            EditNote(noteToEdit, user);
-                        }
-                        else
-                        {
-                            Console.WriteLine("Invalid note number.");
-                        }
-                        break;
-                    case 2:
-                        Console.Clear();
-                        break;
-                    default:
-                        Console.WriteLine("Invalid choice. Please try again.");
-                        break;
-                }
+                NotesManager.ViewNotes(user);
             }
             else
             {
