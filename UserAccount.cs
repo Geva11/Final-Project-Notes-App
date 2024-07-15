@@ -30,7 +30,14 @@ namespace Final_Project_Notes_App
             Console.Write("Enter your password: ");
             string password = Console.ReadLine();
 
-            return users.Find(u => u.Email == email && u.Password == password);
+            foreach (User user in users)
+            {
+                if (user.Email == email && user.Password == password)
+                {
+                    return user;
+                }
+            }
+            return null;
         }
     }
 }
