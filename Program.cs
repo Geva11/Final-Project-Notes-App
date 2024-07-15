@@ -117,6 +117,7 @@ namespace Final_Project_Notes_App
                                 break;
                             default:
                                 Console.WriteLine("\nInvalid choice. Please try again.");
+                                Console.ReadKey();
                                 Console.Clear();
                                 break;
                         }
