@@ -8,15 +8,6 @@ namespace Final_Project_Notes_App
 {
     internal class NotesFunctions
     {
-        public static void DisplayNotes(User user)
-        {
-            Console.WriteLine("\nList of Notes:");
-            for (int i = 0; i < user.Notes.Count; i++)
-            {
-                Console.WriteLine($"{i + 1}. {user.Notes[i].Title}");
-            }
-        }
-
         public static void EditNote(Note notes, User user)
         {
             Console.Write("Enter the new content for the note: ");
@@ -36,7 +27,7 @@ namespace Final_Project_Notes_App
         {
             if (user.Notes.Count > 0)
             {
-                DisplayNotes(user);
+                NotesManager.DisplayNotes(user);
                 Console.WriteLine("----------------------");
                 Console.WriteLine("1. Edit Note");
                 Console.WriteLine("2. Go back");

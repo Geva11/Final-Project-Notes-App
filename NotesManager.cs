@@ -48,7 +48,7 @@ namespace Final_Project_Notes_App
                 Console.WriteLine($"\n** {selectedNote.Title} **");
                 Console.WriteLine(selectedNote.Content);
 
-                NotesFunctions.DisplayNotes(user);
+                DisplayNotes(user);
 
                 Shortcut(selectedNote, user);
             }
@@ -56,6 +56,15 @@ namespace Final_Project_Notes_App
             {
                 Console.WriteLine("\nInvalid note number.");
                 Console.Clear();
+            }
+        }
+
+        public static void DisplayNotes(User user)
+        {
+            Console.WriteLine("\nList of Notes:");
+            for (int i = 0; i < user.Notes.Count; i++)
+            {
+                Console.WriteLine($"{i + 1}. {user.Notes[i].Title}");
             }
         }
 
